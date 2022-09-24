@@ -1,0 +1,30 @@
+@use '../helpers/variables' as *;
+
+.stats {
+    background-color: $dark-blue;
+    color: $white;
+
+    .container {
+        text-align: center;
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        p:first-child {
+            font-size: calc(1.425rem + 2.1vw);
+        }
+
+        p:last-child {
+            color: $transparent-white;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-evenly;
+        }
+    }
+}

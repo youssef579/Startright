@@ -1,0 +1,31 @@
+@use './variables' as *;
+
+@mixin orange-btn {
+    display: inline-block;
+    border: 2px solid $orange;
+    color: $white;
+    padding: 12px 24px;
+    background-color: $orange;
+
+    transition: {
+        duration: $duration;
+        property: background-color, box-shadow;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px rgba(206, 147, 81, 50%);
+    }
+}
+
+@mixin main-image {
+    background-color: #f2ad5f;
+    padding: 40px;
+
+    img {
+        width: 100%;
+    }
+}

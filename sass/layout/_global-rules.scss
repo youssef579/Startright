@@ -1,0 +1,67 @@
+@use '../helpers/mixins' as *;
+
+* {
+    -moz-border-sizing: border-box;
+    -webkit-border-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.orange-btn {
+    @include orange-btn;
+}
+
+.main-image {
+    @include main-image;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.container {
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}

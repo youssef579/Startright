@@ -1,0 +1,65 @@
+@use '../helpers/variables' as *;
+
+.more-features {
+    text-align: center;
+
+    .container {
+        h2 {
+            font-size: 35px;
+            color: $dark-blue;
+            margin-bottom: 40px;
+        }
+
+        .content {
+            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            .feature {
+                border: 2px solid rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                padding: 30px;
+                transition: {
+                    duration: $duration;
+                    property: border-color;
+                };
+                
+                i {
+                    display: inline-grid;
+                    place-content: center;
+                    width: 80px;
+                    height: 80px;
+                    font-size: 30px;
+                    background-color: #efefee;
+                    padding: 22px;
+                    margin-bottom: 15px;
+                    border-radius: 50%;
+                    transition: {
+                        duration: $duration;
+                        property: color, background-color;
+                    };
+                }
+
+                h6 {
+                    margin-bottom: 5px;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                }
+
+                p {
+                    color: #252837;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    border-color: $dark-blue;
+
+                    i {
+                        color: $orange;
+                        background-color: $dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}

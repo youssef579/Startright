@@ -1,0 +1,79 @@
+@use '../helpers/variables' as *;
+
+footer {
+    padding: 40px 0;
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(3, auto) 1fr;
+        gap: 80px;
+
+        h5 {
+            font: {
+                size: 17px;
+                weight: 500;
+            }
+
+            ;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        li {
+            text-transform: capitalize;
+            color: rgba(0, 0, 0, 0.5);
+            transition: color $duration;
+            cursor: pointer;
+            width: fit-content;
+            font-size: 15px;
+            line-height: 1.8;
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+        input {
+            border: none;
+            outline: none;
+
+            &[type="email"] {
+                background-color: #efefef;
+                border-radius: 7px;
+                height: 52px;
+                padding: 6px 12px;
+                caret-color: $dark-blue;
+                margin-right: 10px;
+                width: calc(100% - 134px);
+            }
+
+            &[type="submit"] {
+                color: $white;
+                background-color: $dark-blue;
+                padding: 15px 20px;
+                cursor: pointer;
+                transition: background-color $duration;
+
+                &:hover {
+                    background-color: #0e3e4e;
+                }
+            }
+        }
+
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    p {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 15px;
+
+        span {
+            font-weight: bold;
+            color: $orange;
+        }
+    }
+}

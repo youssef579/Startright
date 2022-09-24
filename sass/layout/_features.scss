@@ -1,0 +1,84 @@
+@use '../helpers/variables' as *;
+
+$height: clamp(600px, 100vh, 761px);
+
+.features {
+    position: relative;
+    min-height: $height;
+
+    .container {
+        gap: clamp(100px, 10vw, 160px);
+        height: $height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+            width: 100%;
+            color: $transparent-white;
+
+            h2 {
+                color: $white;
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                margin-bottom: 30px;
+
+                li {
+                    line-height: 2;
+                }
+
+                i {
+                    color: $orange;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $dark-blue;
+        min-height: $height;
+        width: 70vw;
+        z-index: -1;
+        right: 0;
+        top: 70px;
+    }
+
+    @media (max-width: 991px) {
+        background-color: $dark-blue;
+        height: auto;
+
+        &::before {
+            content: none;
+        }
+
+        .container {
+            height: auto;
+            flex-direction: column;
+            gap: 30px;
+
+            .content {
+                max-width: 600px;
+
+                h2 {
+                    font-size: 30px;
+                }
+            }
+
+            .image,
+            .content {
+                max-width: 600px;
+            }
+        }
+    }
+}

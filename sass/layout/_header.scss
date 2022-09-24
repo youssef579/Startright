@@ -1,0 +1,126 @@
+@use '../helpers/variables' as *;
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px 0 20px;
+    background-color: transparent;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a.logo {
+            font: {
+                size: 22px;
+                weight: bold;
+            }
+
+            color: $orange;
+        }
+
+        .list {
+            cursor: pointer;
+            width: 24px;
+            height: 22px;
+            display: none;
+
+            div {
+                height: 2px;
+                width: 100%;
+                background-color: $white;
+                border-radius: 5px;
+                transition: translate $duration;
+
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) {
+                        translate: 0 8px * ($i - 1);
+                    }
+                }
+            }
+
+            &:hover {
+                div:first-child {
+                    translate: 0 3px;
+                }
+
+                div:last-child {
+                    translate: 0 13px;
+                }
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+
+            .close {
+                display: none;
+                position: absolute;
+                top: 40px;
+                right: 20px;
+                cursor: pointer;
+                width: 30px;
+                height: 24px;
+
+                div {
+                    position: absolute;
+                    background-color: #000;
+                    height: 100%;
+                    width: 2px;
+                    border-radius: 5px;
+
+                    &:first-child {
+                        rotate: 45deg;
+                    }
+
+                    &:last-child {
+                        rotate: -45deg;
+                    }
+                }
+            }
+
+            a {
+                font-size: 14px;
+                text-transform: capitalize;
+                color: $transparent-white;
+                transition: color $duration;
+
+                &.active {
+                    color: $orange;
+                }
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .list, .close {
+                display: block !important;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: min(-70%, -350px);
+                height: 100vh;
+                width: min(70%, 350px);
+                flex-direction: column;
+                background-color: $white;
+                box-shadow: -10px 0 20px -10px rgb(0 0 0 / 10%);
+                justify-content: center;
+                align-items: center;
+                transition: right $duration;
+
+                a {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
